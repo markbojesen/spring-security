@@ -16,11 +16,12 @@ public class StudentController {
     private static final List<Student> STUDENTS = Arrays.asList(
         new Student(1, "James Bond"),
         new Student(2, "Frank Hvam"),
-        new Student(3, "Casper Christian")
+        new Student(3, "Casper Christensen")
     );
 
     @GetMapping(path = "{studentId}")
     public Student getStudent(@PathVariable Integer studentId) {
+
         return STUDENTS.stream()
             .filter(student -> studentId.equals(student.getStudentId()))
             .findFirst()
